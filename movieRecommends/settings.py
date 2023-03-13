@@ -10,10 +10,12 @@ For the full list of settings and their values, see
 https://docs.djangoproject.com/en/4.1/ref/settings/
 """
 
+import os
 from pathlib import Path
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
+
 
 
 # Quick-start development settings - unsuitable for production
@@ -25,8 +27,9 @@ SECRET_KEY = "django-insecure-t^^@$f%(!tdg6280m#+sf6n(he6rgr3#%gcei0$_+dp#k_2_vj
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['https://richardkefa-curly-adventure-r6v4wjj7v592xwx4-8000.preview.app.github.dev/','localhost']
 
+CSRF_TRUSTED_ORIGINS = ['https://richardkefa-curly-adventure-r6v4wjj7v592xwx4-8000.preview.app.github.dev']
 
 # Application definition
 
@@ -56,7 +59,7 @@ ROOT_URLCONF = "movieRecommends.urls"
 TEMPLATES = [
     {
         "BACKEND": "django.template.backends.django.DjangoTemplates",
-        "DIRS": [],
+        "DIRS": [os.path.join(BASE_DIR, 'templates')],
         "APP_DIRS": True,
         "OPTIONS": {
             "context_processors": [
